@@ -1,0 +1,139 @@
+
+=== GYM MANAGEMENT SYSTEM ===
+1. Login
+2. Register Admin (First Setup)
+3. Exit
+Enter choice: Enter Admin Name: Enter Admin Email: Enter Admin Phone: Enter Admin Password: Failed to register Admin.
+
+=== GYM MANAGEMENT SYSTEM ===
+1. Login
+2. Register Admin (First Setup)
+3. Exit
+Enter choice: Enter Email: Enter Password: Login successful. Welcome, Admin_John!
+
+=== ADMIN MENU ===
+1. Add Member
+2. Remove Member
+3. Add Trainer
+4. Remove Trainer
+5. Assign Trainer to Member
+6. View Reports
+7. Run System Tests
+8. Logout
+Enter choice: Enter name: Enter email: Enter phone: Enter password: Enter Specialization: Enter Experience Years: Failed to add trainer.
+
+=== ADMIN MENU ===
+1. Add Member
+2. Remove Member
+3. Add Trainer
+4. Remove Trainer
+5. Assign Trainer to Member
+6. View Reports
+7. Run System Tests
+8. Logout
+Enter choice: Enter name: Enter email: Enter phone: Enter password: Enter age: Enter height (cm): Enter weight (kg): Enter Membership Type (Gold/Silver): Failed to add member.
+
+=== ADMIN MENU ===
+1. Add Member
+2. Remove Member
+3. Add Trainer
+4. Remove Trainer
+5. Assign Trainer to Member
+6. View Reports
+7. Run System Tests
+8. Logout
+Enter choice: Enter Member ID: Enter Trainer ID: Assigned.
+
+=== ADMIN MENU ===
+1. Add Member
+2. Remove Member
+3. Add Trainer
+4. Remove Trainer
+5. Assign Trainer to Member
+6. View Reports
+7. Run System Tests
+8. Logout
+Enter choice: Logged out successfully.
+
+=== GYM MANAGEMENT SYSTEM ===
+1. Login
+2. Register Admin (First Setup)
+3. Exit
+Enter choice: Enter Email: Enter Password: Login successful. Welcome, Trainer_Mike!
+
+=== TRAINER MENU ===
+1. View Assigned Members
+2. Create Workout Plan
+3. Update Workout Plan
+4. Track Member Progress
+5. Logout
+Enter choice: 
+--- Assigned Members ---
+
+=== TRAINER MENU ===
+1. View Assigned Members
+2. Create Workout Plan
+3. Update Workout Plan
+4. Track Member Progress
+5. Logout
+Enter choice: Enter Member ID: Enter Duration (Weeks): Enter Exercises (comma separated): Enter Difficulty: Workout Plan created successfully.
+
+=== TRAINER MENU ===
+1. View Assigned Members
+2. Create Workout Plan
+3. Update Workout Plan
+4. Track Member Progress
+5. Logout
+Enter choice: Logged out successfully.
+
+=== GYM MANAGEMENT SYSTEM ===
+1. Login
+2. Register Admin (First Setup)
+3. Exit
+Enter choice: Enter Email: Enter Password: Login successful. Welcome, Member_Sarah!
+
+=== MEMBER MENU ===
+1. View Workout Plan
+2. Track Health Progress
+3. View Progress History
+4. Choose Trainer based on rating
+5. Rate Trainer
+6. Logout
+Enter choice: 
+--- Workout Plans ---
+
+=== MEMBER MENU ===
+1. View Workout Plan
+2. Track Health Progress
+3. View Progress History
+4. Choose Trainer based on rating
+5. Rate Trainer
+6. Logout
+Enter choice: Enter weight (kg): Enter body fat %: Enter muscle mass (kg): Enter date (YYYY-MM-DD): Health metrics updated successfully.
+
+=== MEMBER MENU ===
+1. View Workout Plan
+2. Track Health Progress
+3. View Progress History
+4. Choose Trainer based on rating
+5. Rate Trainer
+6. Logout
+Enter choice: 
+--- Health Progress History ---
+Date: 2026-03-16 | Weight: 64.5 | Body Fat: 18.5 | Muscle Mass: 30
+Date: 2026-03-16 | Weight: 64.5 | Body Fat: 18.5 | Muscle Mass: 30
+
+=== MEMBER MENU ===
+1. View Workout Plan
+2. Track Health Progress
+3. View Progress History
+4. Choose Trainer based on rating
+5. Rate Trainer
+6. Logout
+Enter choice: Logged out successfully.
+
+=== GYM MANAGEMENT SYSTEM ===
+1. Login
+2. Register Admin (First Setup)
+3. Exit
+Enter choice: Exiting system. Goodbye!
