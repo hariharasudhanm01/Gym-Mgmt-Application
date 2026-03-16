@@ -4,6 +4,8 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+#include "Trainer.h"
+
 
 WorkoutModule::WorkoutModule(DatabaseManager& database) : db(database) {}
 
@@ -104,6 +106,56 @@ bool WorkoutModule::getWorkoutPlan(int planId, WorkoutPlan& plan) {
     
     db.finalizeStatement(stmt);
     return false;
+}
+bool WorkoutModule::getTopRatedTrainers(int memberId, std::vector<Trainer>& trainers) {
+    // Retrieve top-rated trainers
+    std::ostringstream query;
+    query << "SELECT t.id, t.name, t.role, AVG(r.rating) AS average_rating "
+          << "FROM trainers t "
+          << "JOIN ratings r ON t.id = r.trainerId "
+          << "GROUP BY t.id "
+          << "ORDER BY average_rating DESC "
+          << "LIMIT 5;";
+    
+    sqlite3_stmt* stmt = db.prepareStatement(query.str());
+    if (!stmt) return false;
+    
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        Trainer trainer;
+        trainer.id = sqlite3_column_int(stmt, 0);
+        trainer.name = (char*)sqlite3_column_text(stmt, 1);
+        trainer.role = (char*)sqlite3_column_text(stmt, 2);
+        trainer.averageRating = sqlite3_column_double(stmt, 3);
+        
+        trainers.push_back(trainer);
+    }
+    
+    db.finalizeStatement(stmt);
+    
+    return true;
+}
+
+bool WorkoutModule::assignTrainer(int memberId, int trainerId) {
+    // Assign trainer to member
+    std::ostringstream query;
+    query << "INSERT INTO memberTrainers (memberId, trainerId) "
+          << "VALUES (?, ?);";
+    
+    sqlite3_stmt* stmt = db.prepareStatement(query.str());
+    if (!stmt) return false;
+    
+    int rc = sqlite3_bind_int(stmt, 1, memberId);
+    if (rc != SQLITE_OK) return false;
+    
+    rc = sqlite3_bind_int(stmt, 2, trainerId);
+    if (rc != SQLITE_OK) return false;
+    
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) return false;
+    
+    db.finalizeStatement(stmt);
+    
+    return true;
 }
 
 bool WorkoutModule::getMemberWorkoutPlans(int memberId, std::vector<WorkoutPlan>& plans) {

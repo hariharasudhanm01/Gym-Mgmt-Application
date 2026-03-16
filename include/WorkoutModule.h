@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "DatabaseManager.h"
+#include "Trainer.h"
 
 struct Exercise {
     int id;
@@ -35,7 +36,9 @@ public:
                            const std::string& description, const std::string& muscleGroup);
     bool removeExerciseFromPlan(int exerciseId);
     bool getWorkoutPlan(int planId, WorkoutPlan& plan);
-    bool getMemberWorkoutPlans(int memberId, std::vector<WorkoutPlan>& plans);
+    bool getTopRatedTrainers(int memberId, std::vector<Trainer>& trainers);
+    bool assignTrainer(int memberId, int trainerId);
+    bool getMemberWorkoutPlans(int memberId, std::vector<WorkoutPlan> &plans);
     bool assignPlanToMember(int memberId, int planId);
     void displayWorkoutMenu();
     void displaySamplePlans();
