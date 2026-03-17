@@ -10,7 +10,8 @@ void MemberMenu::displayMenu() {
         std::cout << "3. View Progress History" << std::endl;
         std::cout << "4. Choose Trainer based on rating" << std::endl;
         std::cout << "5. Rate Trainer" << std::endl;
-        std::cout << "6. Logout" << std::endl;
+        std::cout << "6. Calculate BMI" << std::endl;
+        std::cout << "7. Logout" << std::endl;
         std::cout << "Enter choice: ";
         std::cin >> choice;
 
@@ -80,7 +81,20 @@ void MemberMenu::displayMenu() {
                 }
                 break;
             }
-            case 6:
+            case 6: {
+                double bmi = memberService->calculateBMI(currentUserId);
+                if (bmi > 0.0) {
+                    std::cout << "Your BMI is: " << bmi << std::endl;
+                    if (bmi < 18.5) std::cout << "Category: Underweight" << std::endl;
+                    else if (bmi < 24.9) std::cout << "Category: Normal weight" << std::endl;
+                    else if (bmi < 29.9) std::cout << "Category: Overweight" << std::endl;
+                    else std::cout << "Category: Obese" << std::endl;
+                } else {
+                    std::cout << "Height or Weight data not available for your profile. Please ask admin to update." << std::endl;
+                }
+                break;
+            }
+            case 7:
                 authService->logout();
                 std::cout << "Logged out successfully." << std::endl;
                 return;

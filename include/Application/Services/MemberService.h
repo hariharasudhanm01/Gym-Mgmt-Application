@@ -27,6 +27,7 @@ public:
     bool chooseTrainerBasedOnRating(int userId, int trainerId);
     bool updateHealthMetrics(int userId, double weight, double bodyFat, double muscleMass, const std::string& date);
     bool rateTrainer(int userId, int trainerId, double score, const std::string& review);
+    double calculateBMI(int userId);
 };
 
 #endif

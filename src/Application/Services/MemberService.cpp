@@ -49,3 +49,20 @@ bool MemberService::rateTrainer(int userId, int trainerId, double score, const s
     TrainerRating rating(0, trainerId, member.getMemberId(), score, review);
     return ratingRepo.add(rating);
 }
+
+double MemberService::calculateBMI(int userId) {
+    auto member = memberRepo.getByUserId(userId);
+    if (member.getMemberId() == 0) return 0.0;
+    
+    double h = member.getHeight();
+    double w = member.getWeight();
+    
+    if (h <= 0 || w <= 0) return 0.0;
+    
+    // Assume height > 3.0 means cm.
+    if (h > 3.0) {
+        h = h / 100.0;
+    }
+    
+    return w / (h * h);
+}
